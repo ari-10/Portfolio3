@@ -1,0 +1,49 @@
+.staff {
+  @include section;
+
+  &__inner {
+    @include inner;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: wrap;
+  }
+
+  &__title {
+    @include section__title;
+  }
+
+  &__body {
+    flex-basis: 45%;
+    max-width: 27rem;
+    display: flex;
+    flex-flow: column;
+
+    @include breakPoint_th {
+      flex-basis: 100%;
+      align-items: center;
+    }
+  }
+
+  &__feature {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: 55%;
+    position: relative;
+    margin: 3rem 0;
+
+    @include breakPoint_th {
+      flex-basis: 100%;
+    }
+  } 
+
+  &__text {
+    margin-bottom: 4rem;
+  }
+
+  &__button {
+    @include button;
+    width: 13rem;
+    height: 5rem;
+  }
+}

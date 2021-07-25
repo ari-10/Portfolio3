@@ -1,0 +1,126 @@
+.sub-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  max-width: 30rem;
+  width: 100%;
+  padding: 8rem 0;
+  background-color: $color_base;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateX(100%);
+  z-index: 5;
+  
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__btn {
+    display: flex;
+    justify-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 6rem;
+    height: 6rem;
+    background-color: $color_base;
+
+    &--active {
+    
+      .sub-nav__btn-line {
+        background-color: transparent;
+
+        &::before {
+          bottom: 0;
+          background-color: #fff;
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          top: 0;
+          background-color: #fff;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__btn-line {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 2.6rem;
+    background-color: #fff;
+    position: absolute;
+    transition: all 0.5s;
+    
+    &::before {
+      @extend .sub-nav__btn-line;
+      bottom: 0.8rem;
+    }
+
+    &::after {
+      @extend .sub-nav__btn-line;
+      top: 0.8rem;
+    }
+  }
+
+  &__lists {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    $font-size: 2rem;
+    font-size: $font-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color_white;
+    font-family: $font-family-en;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150%;
+      height: 1px;
+      position: absolute;
+      border-bottom: 1px solid $color_white;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+
+      &::before {
+        opacity: 1;
+      }
+    }  
+
+    @include breakPoint_tw {
+      font-size: calc(#{$font-size} * 0.94);
+    }
+  
+    @include breakPoint_th {
+      font-size: calc(#{$font-size} * 0.88);
+    }
+  
+    @include breakPoint_sp {
+      font-size: calc(#{$font-size} * 0.82);
+    }
+  }
+}

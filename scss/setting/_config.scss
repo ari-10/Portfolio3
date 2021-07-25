@@ -1,0 +1,16 @@
+// font-family
+$font-size_base: 1.5rem;
+$font-family-en: 'Playfair Display', serif;
+$font-family_icon: $font-family_en, "material icons", "material icons outlined";
+$font-family_base: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif, $font-family_icon;
+
+// color
+$color_white: #fff;
+$color_black: #333;
+$color_base: #1d1d1d;
+
+// breakpoint
+$breakPoint_pc: 1280px;
+$breakPoint_tw: 1024px;
+$breakPoint_th: 768px;
+$breakPoint_sp: 480px;

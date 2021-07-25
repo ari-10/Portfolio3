@@ -1,0 +1,61 @@
+.menu {
+  @include section;
+  padding-top: 12rem;
+
+  &__inner {
+    @include inner;
+    padding: 5%;
+    background-color: $color_base;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+  }
+
+  &__title {
+    @include section__title;
+  }
+
+  &__lists {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-basis: 45%;
+    margin-bottom: 3rem;
+    
+    &::before {
+      content: "";
+      flex: 1;
+      order: 2;
+      border-bottom: 1px dotted $color_white;
+      height: 1px;
+      margin: 0 2rem;
+    }
+
+    @include breakPoint_th {
+      flex-basis: 100%;
+    }
+  }
+
+  &__category {
+    order: 1;
+    color: $color_white;
+  }
+
+  &__price {
+    order: 3;
+    color: $color_white;
+  }
+
+  &__btn {
+    @include button;
+    width: 18rem;
+    height: 5rem;
+    margin-bottom: 3rem;
+  }
+}

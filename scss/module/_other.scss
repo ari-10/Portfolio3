@@ -1,0 +1,26 @@
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background-color: $color_base;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__icon {
+    color: $color_white;
+  }
+}
+
+.js-fade-in-slide {
+  transition: transform 0.4s;
+  transform: scaleX(0);
+
+  &--done {
+    transform: scaleX(1);
+  }
+}

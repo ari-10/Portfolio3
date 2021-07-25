@@ -1,0 +1,81 @@
+.galley {
+  @include section;
+  padding-top: 12rem;
+
+  &__inner {
+    @include inner;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: wrap;
+  }
+
+  &__title {
+    @include section__title;
+  }
+
+  &__body {
+    flex-basis: 45%;
+    max-width: 27rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    @include breakPoint-th {
+      align-items: center;
+      flex-basis: 100%;
+    }
+
+    @include breakPoint-sp {
+      flex-basis: 100%;
+      align-items: center;
+    }
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    flex-basis: 55%;
+    position: relative;
+    padding: 6rem 0 8rem;
+    
+    @include breakPoint-th {
+      padding: 6rem 0;
+      flex-basis: 100%;
+    }
+
+    @include breakPoint-sp {
+      padding: 4rem 0;
+    }
+
+    &-img {
+
+      &:nth-child(1) {
+        width: 80%;
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        width: 33.3%;
+        top: 0;
+        right: 0;
+      }
+
+      &:nth-child(3) {
+        position: absolute;
+        width: 33.3%;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  } 
+
+  &__text {
+    margin-bottom: 4rem;
+  }
+
+  &__button {
+    @include button;
+    width: 13rem;
+    height: 5rem;
+  }
+}
