@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: center;
 
+    @include breakPoint_sp {
+      height: 36rem;
+    }
+
     &::before {
       content: "";
       position: absolute;
