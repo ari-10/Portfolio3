@@ -1,17 +1,17 @@
 .sub-nav {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 100%;
   max-width: 30rem;
   width: 100%;
   padding: 8rem 0;
   background-color: $color_base;
   transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transform: translateX(100%);
+  transform: translateX(0%);
   z-index: 5;
   
   &--active {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
 
   &__btn {

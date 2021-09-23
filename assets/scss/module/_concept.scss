@@ -2,12 +2,22 @@
   @include section;
   padding-top: 12rem;
 
+  @include breakPoint_sp {
+    padding-top: 2rem;
+  }
+
   &__inner {
     @include inner;
     flex-flow: column;
     align-items: center;
-    padding: 5%;
-    background-color: $color_base;
+    padding: 4rem;
+    background-image: url(./img/concept-img01.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+
+    @include breakPoint_sp {
+      padding: 2rem;
+    }
   }
 
   &__title {
@@ -15,45 +25,24 @@
   }
 
   &__body {
-    max-width: 72rem;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+    padding: 5%;
+    background-color: rgba($color: #fff, $alpha: 0.95);
+    width: 100%;
+    text-align: center;
 
     &::after {
       content: "";
-      width: 8rem;
-      height: 1px;
-      background-color: $color_white;
-      margin: 2rem 0;
-    }
-  }
-
-  &__heading {
-    $font-size: 3.2rem;
-    font-size: $font-size;
-    font-family: $font-family-en;
-    text-align: center;
-    line-height: 1.3;
-    margin-bottom: 3rem;
-    color: $color_white;
-
-    @include breakPoint_tw {
-      font-size: calc(#{$font-size} * 0.94);
-    }
-  
-    @include breakPoint_th {
-      font-size: calc(#{$font-size} * 0.88);
-    }
-  
-    @include breakPoint_sp {
-      @include fz_vw(24);
+      display: block;
+      margin: 2rem auto 2rem;
+      width: 6rem;
+      height: 0.1rem;
+      background-color: #333;
     }
   }
 
   &__text {
     margin-bottom: 4rem;
-    color: $color_white;    
+    line-height: 3;
+    letter-spacing: 0.25rem;
   }
 }
