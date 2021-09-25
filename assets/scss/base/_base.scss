@@ -13,6 +13,8 @@ body {
 	font-size: $font-size_base;
 	color: $color_black;
   font-family: $font-family_base;
+	font-feature-settings: "palt" 1;
+	letter-spacing: 0.05rem;
 
 	@include breakPoint_tw {
 		font-size: calc(#{$font-size_base} * 0.94);

@@ -398,6 +398,9 @@ body {
   font-size: 1.5rem;
   color: #333;
   font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif, "Playfair Display", serif, "material icons", "material icons outlined";
+  -webkit-font-feature-settings: "palt" 1;
+          font-feature-settings: "palt" 1;
+  letter-spacing: 0.05rem;
 }
 
 @media (max-width: 1024px) {
