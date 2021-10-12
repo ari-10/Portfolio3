@@ -1,13 +1,12 @@
 .access {
   @include section;
   padding-top: 12rem;
-  background-image: linear-gradient(to top, #1d1d1d 40%, transparent 40%);
+  background-image: linear-gradient(to top, rgba($color_base, 0.95) 40%, #fff 40%);
 
   &__inner {
     @include inner;
     justify-content: space-between;
     flex-flow: wrap;
-    background-color: #fff;
 
     @include breakPoint_th {
       flex-flow: column;
@@ -24,6 +23,7 @@
     flex-flow: column;
     align-items: center;
     padding: 4%;
+    background-color: #fff;
   }
 
   &__address {

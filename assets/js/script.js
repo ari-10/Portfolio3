@@ -6,13 +6,20 @@ const loadingLogo = document.querySelector('.loading__logo');
 const scrollTopButton = document.querySelector('.scroll-top');
 const subNavButton = document.querySelector('.sub-nav__btn');
 const subNav = document.querySelector('.sub-nav');
-const images = document.querySelectorAll('.js-fade-in-slide');
-const options = {
+const flipInElements = document.querySelectorAll('.js-flip-in');
+const fadeInElements = document.querySelectorAll('.js-fade-in');
+const flipInOpt = {
+  root : null,
+  rootMargin : "0px 0px -150px 0px",
+  threshold: 0
+};
+const fadeInOpt = {
   root : null,
   rootMargin : "0px",
-  threshold: 1.0
+  threshold: 0.5
 };
-const observer = new IntersectionObserver(fadeInSlide, options);
+const flipInObs = new IntersectionObserver(flipIn, flipInOpt);
+const fadeInObs = new IntersectionObserver(fadeIn, fadeInOpt);
 
 
 // Function
@@ -31,18 +38,31 @@ function subNavTrigger() {
   subNav.classList.toggle('sub-nav--active');
 }
 
-function fadeInSlide(entries) {
+function flipIn(entries) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
-    entry.target.classList.add('js-fade-in-slide--done');
+    entry.target.classList.add('js-flip-in--done');
   });
 }
 
+function fadeIn(entries) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('js-fade-in--done');
+  });
+}
 
 // Event
 window.addEventListener('load', load);
+
 scrollTopButton.addEventListener('click', scrollBackToTop);
+
 subNavButton.addEventListener('click', subNavTrigger);
-images.forEach(image => {
-  observer.observe(image);
+
+flipInElements.forEach(flipInElement => {
+  flipInObs.observe(flipInElement);
+});
+
+fadeInElements.forEach(fadeInElement => {
+  fadeInObs.observe(fadeInElement);
 });

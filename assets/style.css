@@ -465,23 +465,47 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
   -webkit-transition: all 1s;
   transition: all 1s;
   overflow: hidden;
 }
 
-.loading::after {
-  content: '';
+.loading__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.loading__swing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3rem;
+  height: 1px;
+}
+
+.loading__swing span {
   border-radius: 2px;
   -webkit-animation: swing cubic-bezier(0.77, 0, 0.175, 1) 1.5s infinite;
           animation: swing cubic-bezier(0.77, 0, 0.175, 1) 1.5s infinite;
   background-color: #fff;
-  margin-top: 2rem;
-  width: 50%;
+  width: 3rem;
   height: 1px;
 }
 
@@ -594,31 +618,31 @@ figure {
 
 @-webkit-keyframes swing {
   0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
   }
   50% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
   100% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
   }
 }
 
 @keyframes swing {
   0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
   }
   50% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
   100% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
   }
 }
 
@@ -760,7 +784,7 @@ figure {
 
 @media (max-width: 480px) {
   .header__logo {
-    margin-left: 0;
+    display: none;
   }
 }
 
@@ -1003,9 +1027,18 @@ figure {
   }
 }
 
-.hero__inner {
-  width: 100%;
+.hero {
   height: 100vh;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 40rem;
+  }
+}
+
+.hero__inner {
+  height: 100%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1016,35 +1049,6 @@ figure {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #1d1d1d;
-}
-
-@media (max-width: 480px) {
-  .hero__inner {
-    height: 36rem;
-  }
-}
-
-.hero__inner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.2);
-  background-image: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 1px, transparent 0, transparent 6px), repeating-linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 1px, transparent 0, transparent 6px);
-}
-
-.hero__mv {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .hero__body {
@@ -1115,6 +1119,10 @@ figure {
   z-index: 1;
   background-color: #1d1d1d;
   width: 60%;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
 @media (max-width: 768px) {
@@ -1127,6 +1135,11 @@ figure {
   .hero__info {
     display: none;
   }
+}
+
+.hero__info--hide {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .hero__info-body {
@@ -1197,7 +1210,15 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  background-color: #fff;
   padding-top: 12rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(55%, rgba(255, 255, 255, 0.8)), to(#fff));
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 55%, #fff);
+}
+
+.concept--transparent {
+  background-color: transparent;
 }
 
 @media (max-width: 480px) {
@@ -1207,7 +1228,7 @@ figure {
 }
 
 .concept__inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1223,14 +1244,23 @@ figure {
       -ms-flex-align: center;
           align-items: center;
   padding: 4rem;
-  background-image: url(./img/concept-img01.jpg);
-  background-position: 50% 50%;
-  background-size: cover;
 }
 
 @media (max-width: 480px) {
   .concept__inner {
     padding: 2rem;
+  }
+}
+
+.concept__logo {
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .concept__logo {
+    margin-bottom: 0rem;
+    width: 6rem;
   }
 }
 
@@ -1264,9 +1294,6 @@ figure {
 }
 
 .concept__body {
-  padding: 5%;
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 100%;
   text-align: center;
 }
 
@@ -1282,7 +1309,19 @@ figure {
 .concept__text {
   margin-bottom: 4rem;
   line-height: 3;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .concept__text ._sp {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .concept__text {
+    letter-spacing: 0.25rem;
+  }
 }
 
 .galley {
@@ -1298,11 +1337,17 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  background-color: #fff;
   padding-top: 12rem;
 }
 
+.galley--transparent {
+  background-color: transparent;
+}
+
 .galley__inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1526,10 +1571,16 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  background-color: #fff;
+}
+
+.styling--transparent {
+  background-color: transparent;
 }
 
 .styling__inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1758,10 +1809,16 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  background-color: #fff;
+}
+
+.staff--transparent {
+  background-color: transparent;
 }
 
 .staff__inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1950,11 +2007,17 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  background-color: #fff;
   padding-top: 12rem;
 }
 
+.news--transparent {
+  background-color: transparent;
+}
+
 .news__inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2171,11 +2234,17 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  background-color: #fff;
   padding-top: 12rem;
 }
 
+.menu--transparent {
+  background-color: transparent;
+}
+
 .menu__inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2378,13 +2447,19 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  background-color: #fff;
   padding-top: 12rem;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(40%, #1d1d1d), color-stop(40%, transparent));
-  background-image: linear-gradient(to top, #1d1d1d 40%, transparent 40%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(40%, rgba(29, 29, 29, 0.95)), color-stop(40%, #fff));
+  background-image: linear-gradient(to top, rgba(29, 29, 29, 0.95) 40%, #fff 40%);
+}
+
+.access--transparent {
+  background-color: transparent;
 }
 
 .access__inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2397,7 +2472,6 @@ figure {
           justify-content: space-between;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
-  background-color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -2452,6 +2526,7 @@ figure {
       -ms-flex-align: center;
           align-items: center;
   padding: 4%;
+  background-color: #fff;
 }
 
 .access__address {
@@ -2566,7 +2641,8 @@ figure {
 }
 
 .footer {
-  background-color: #1d1d1d;
+  background-color: rgba(29, 29, 29, 0.95);
+  position: relative;
   padding: 10rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2583,7 +2659,7 @@ figure {
 }
 
 .footer__inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2712,6 +2788,40 @@ figure {
   color: #ccc;
 }
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 480px) {
+  .background {
+    position: absolute;
+    height: 40rem;
+  }
+}
+
+.background__cover {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 1px, transparent 0, transparent 6px), repeating-linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 1px, transparent 0, transparent 6px);
+}
+
+.background__mv {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .scroll-top {
   position: fixed;
   bottom: 2rem;
@@ -2743,7 +2853,7 @@ figure {
   font-size: 1.6rem;
 }
 
-.js-fade-in-slide {
+.js-flip-in {
   -webkit-transition: -webkit-transform 0.4s;
   transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
@@ -2752,8 +2862,18 @@ figure {
           transform: scaleX(0);
 }
 
-.js-fade-in-slide--done {
+.js-flip-in--done {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+}
+
+.js-fade-in {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.js-fade-in--done {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,7 @@
 .concept {
   @include section;
   padding-top: 12rem;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 55%, #fff);
 
   @include breakPoint_sp {
     padding-top: 2rem;
@@ -11,12 +12,19 @@
     flex-flow: column;
     align-items: center;
     padding: 4rem;
-    background-image: url(./img/concept-img01.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
 
     @include breakPoint_sp {
       padding: 2rem;
+    }
+  }
+
+  &__logo {
+    width: 10rem;
+    margin-bottom: 2rem;
+
+    @include breakPoint_sp {
+    margin-bottom: 0rem;
+    width: 6rem;
     }
   }
 
@@ -25,9 +33,6 @@
   }
 
   &__body {
-    padding: 5%;
-    background-color: rgba($color: #fff, $alpha: 0.95);
-    width: 100%;
     text-align: center;
 
     &::after {
@@ -43,6 +48,15 @@
   &__text {
     margin-bottom: 4rem;
     line-height: 3;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.5rem;
+    @include breakPoint_th {
+      ._sp {
+        display: none;
+      }
+    }
+
+    @include breakPoint_sp {
+      letter-spacing: 0.25rem;
+    }
   }
 }

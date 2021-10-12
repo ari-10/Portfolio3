@@ -1,40 +1,16 @@
 .hero {
+  height: 100vh;
+  
+  @include breakPoint_sp {
+    height: 40rem;
+  }
 
   &__inner {
-    width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $color_base;
-
-    @include breakPoint_sp {
-      height: 36rem;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      background-color: rgba(0,0,0,0.2);
-      background-image:
-        repeating-linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 0, transparent 6px),
-        repeating-linear-gradient(to right,rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 0, transparent 6px);
-    }
-  }
-
-  &__mv {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   &__body {
@@ -92,6 +68,7 @@
     z-index: 1;
     background-color: $color_base;
     width: 60%;
+    transition: transform 0.3s ease-out;
 
     @include breakPoint-th {
       width: 100%;
@@ -99,6 +76,10 @@
 
     @include breakPoint_sp {
       display: none;
+    }
+
+    &--hide {
+      transform: translateX(-100%);
     }
 
     &-body {

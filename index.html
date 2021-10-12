@@ -17,15 +17,25 @@
 <body>
   
   <div class="loading">
-    <div class="loading__logo">
-      <div class="loading__logo-image">
-        <img src="assets/img/logo-w.png" alt="Portfolio3">
+    <div class="loading__container">
+      <div class="loading__logo">
+        <div class="loading__logo-image">
+          <img src="assets/img/logo-w.png" alt="Portfolio3">
+        </div>
+        <div class="loading__logo-body">
+          <span class="loading__logo-title">Portfolio3</span>
+          <span class="loading__logo-lead">東京のヘアサロン</span>
+        </div>
       </div>
-      <div class="loading__logo-body">
-        <span class="loading__logo-title">Portfolio3</span>
-        <span class="loading__logo-lead">東京のヘアサロン</span>
+      <div class="loading__swing">
+        <span></span>
       </div>
     </div>
+  </div>
+
+  <div class="background">
+    <div class="background__cover"></div>
+    <video class="background__mv" src="assets/video/hero-mv01.mp4" poster="assets/img/hero-img01.jpg" loop muted autoplay></video>
   </div>
 
   <header class="header">
@@ -114,43 +124,43 @@
     </div>
   </nav>
 
-  <main class="main">
-    <!-- HERO -->
-    <section class="section hero">
-      <div class="hero__inner">
-        <video class="hero__mv" src="assets/video/hero-mv01.mp4" poster="assets/img/hero-img01.jpg" loop muted autoplay></video>
-        <div class="hero__body">
-          <h1 class="hero__catch">Portfolio3</h1>
-          <p class="hero__lead">Theme <span class="-strong">Beauty Salon</span></p>
-        </div>
-        <div class="hero__info">
-          <div class="hero__info-body">
-            <time class="hero__info-term">2021.XX</time>
-            <p class="hero__info-desc">
-              <a href="" class="hero__info-desc-link">あなたがは前ごろくらい私の大お出かけはない装う来ないらしく。</a>
-            </p>
-            <p class="hero__info-more">
-              <a href="" class="hero__info-more-link arrows">
-                <span class="arrow arrow--first"></span>
-                <span class="arrow arrow--second"></span>
-                <span class="arrow arrow--third"></span>
-              </a>
-            </p>
-          </div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero__inner">
+      <div class="hero__body">
+        <h1 class="hero__catch">Portfolio3</h1>
+        <p class="hero__lead">Theme <span class="-strong">Beauty Salon</span></p>
+      </div>
+      <div class="hero__info">
+        <div class="hero__info-body">
+          <time class="hero__info-term">2021.XX</time>
+          <p class="hero__info-desc">
+            <a href="" class="hero__info-desc-link">あなたがは前ごろくらい私の大お出かけはない装う来ないらしく。</a>
+          </p>
+          <p class="hero__info-more">
+            <a href="" class="hero__info-more-link arrows">
+              <span class="arrow arrow--first"></span>
+              <span class="arrow arrow--second"></span>
+              <span class="arrow arrow--third"></span>
+            </a>
+          </p>
         </div>
       </div>
-    </section>
-
+    </div>
+  </div>
+  
+  <main class="main">
     <!-- Concept -->
-    <section class="concept">
+    <section class="concept concept--transparent">
       <div class="concept__inner">
-        <div class="concept__body">
+        <div class="concept__body js-fade-in">
+          <img class="concept__logo" src="assets/img/logo-b.png" alt="Portfolio3">
           <h1 class="concept__title">Concept</h1>
           <p class="concept__text">
-            ただ肝意味に申しては始めなものないば、<br>
-            嫁がは、最も私か考えてあっれたませ聞いれるでないとするて、<br>
+            ただ肝意味に申しては始めなものないば、<br class="_sp">
+            嫁がは、最も私か考えてあっれたませ聞いれるでないとするて、<br class="_sp">
             肴はしておらですです。<br>
-            すこぶるおおかたもはなはだ先生といういるでて、<br>
+            すこぶるおおかたもはなはだ先生といういるでて、<br class="_sp">
             あなたがは前ごろくらい私の大お出かけはない装う来ないらしく。
           </p>
         </div>
@@ -168,9 +178,9 @@
           <a href="" class="galley__button">more</a>
         </div>
         <div class="galley__feature">
-          <img class="galley__feature-img js-fade-in-slide" src="assets/img/galley-img01-l.jpg" alt="">
-          <img class="galley__feature-img js-fade-in-slide" src="assets/img/galley-img02-l.jpg" alt="">
-          <img class="galley__feature-img js-fade-in-slide" src="assets/img/galley-img03-p.jpg" alt="">
+          <img class="galley__feature-img js-flip-in" src="assets/img/galley-img01-l.jpg" alt="内装1">
+          <img class="galley__feature-img js-flip-in" src="assets/img/galley-img02-l.jpg" alt="内装2">
+          <img class="galley__feature-img js-flip-in" src="assets/img/galley-img03-p.jpg" alt="商品">
         </div>
       </div>
     </section>
@@ -186,9 +196,9 @@
           <a href="" class="styling__button">more</a>
         </div>
         <div class="styling__feature">
-          <img class="styling__feature-img js-fade-in-slide" src="assets/img/style-img01-l.jpg" alt="">
-          <img class="styling__feature-img js-fade-in-slide" src="assets/img/style-img02-l.jpg" alt="">
-          <img class="styling__feature-img js-fade-in-slide" src="assets/img/style-img03-p.jpg" alt="">
+          <img class="styling__feature-img js-flip-in" src="assets/img/style-img01-l.jpg" alt="スタイル01">
+          <img class="styling__feature-img js-flip-in" src="assets/img/style-img02-l.jpg" alt="スタイル02">
+          <img class="styling__feature-img js-flip-in" src="assets/img/style-img03-p.jpg" alt="スタイル03">
         </div>
       </div>
     </section>
@@ -204,7 +214,7 @@
           <a href="" class="staff__button">more</a>
         </div>
         <div class="staff__feature">
-          <img class="staff__feature-img js-fade-in-slide" src="assets/img/staff-img01.jpg" alt="">
+          <img class="staff__feature-img js-flip-in" src="assets/img/staff-img01.jpg" alt="スタッフ">
         </div>
       </div>
     </section>
@@ -213,7 +223,7 @@
     <section class="menu">
       <div class="menu__inner">
         <h1 class="menu__title menu__title--white">Menu</h1>
-        <dl class="menu__lists">
+        <dl class="menu__lists js-fade-in">
           <div class="menu__list">
             <dt class="menu__category">カット</dt>
             <dd class="menu__price">¥4,000〜</dd>
@@ -297,14 +307,14 @@
     </section>
 
     <!-- access -->
-    <section class="access">
+    <section class="access access--transparent">
       <div class="access__inner">
         <div class="access__feature">
-          <img src="assets/img/access-img01.jpg" alt="" class="access_feature-img js-fade-in-slide">
+          <img src="assets/img/access-img01.jpg" alt="店舗外観" class="access_feature-img js-flip-in">
         </div>
         <div class="access__body">
           <h1 class="access__title">Access</h1>
-          <address class="access__address">
+          <address class="access__address js-fade-in">
             店舗名：Portfolio3 Salon<br>
             住所：東京都千代田区丸の内１丁目****<br>
             電話番号：03-0000-0000<br>

@@ -23,7 +23,7 @@
     @include logo(20rem);
 
     @include breakPoint_sp {
-      margin-left: 0;
+      display: none;
     }
   }
 }

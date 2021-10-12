@@ -1,5 +1,6 @@
 .footer {
-  background-color: $color_base;
+  background-color: rgba($color_base, 0.95);
+  position: relative;
   padding: 10rem 0;
   display: flex;
   flex: 1;

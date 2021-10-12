@@ -1,5 +1,5 @@
 @mixin inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 2rem;
   display: flex;
   flex: 1;
@@ -10,6 +10,12 @@
   flex: 1;
   justify-content: center;
   align-items: center;
+  position: relative;
+  background-color: #fff;
+
+  &--transparent {
+    background-color: transparent;
+  }
 }
 
 @mixin section__title {
